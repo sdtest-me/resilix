@@ -1,58 +1,95 @@
-# Сила Бизнеса 2.0
+# Resilix
 
-**Интерактивный калькулятор: насколько бизнес зависит от персонала?**
+**Business People Dependency Calculator**
 
-Инструмент создан для наглядной демонстрации, что даже крупнейшие и самые прибыльные компании мира (Walmart, Amazon, CNPC) сильно зависят от своих сотрудников — и это не делает их «слабыми».
-
-Проект вдохновлён дискуссией в LinkedIn под постом Raykhona Ibragimova, где обсуждалось утверждение:  
-«Если всё держится только на людях — это не сильный бизнес».
-
-### 🎯 Что делает этот калькулятор?
-
-- Оценивает **уровень зависимости бизнеса от персонала**
-- Считает **прибыль на одного сотрудника**
-- Показывает **точку невозврата** (при каком снижении штата бизнес может пострадать необратимо)
-- Сравнивает вашу компанию с тремя гигантами: **Walmart**, **Amazon** и **China National Petroleum Corporation (CNPC)**
-- Выдаёт понятный вердикт: «Сильный независимый бизнес», «Зависит от людей, но управляемо» или «Критически зависит от персонала»
-
-### 🚀 Как пользоваться
-
-Приложение работает **прямо в браузере** — ничего устанавливать не нужно.
-
-Просто откройте ссылку:  
-**https://sdtest-me.github.io/business-strength-calculator/**  
-
-Или откройте файл `index.html` локально в любом браузере.
-
-### Готовые примеры
-
-В приложении есть кнопки быстрой загрузки:
-- **Walmart** — 2,1 млн сотрудников, прибыль $21,9 млрд
-- **Amazon** — 1,576 млн сотрудников, прибыль $77,7 млрд
-- **CNPC** — более 1 млн сотрудников, прибыль ~$25 млрд
-
-### Лицензия
-
-Этот проект распространяется под **MIT License**.
-
-Это означает, что вы можете свободно:
-- Использовать приложение в личных и коммерческих целях
-- Копировать и модифицировать код
-- Распространять как в исходном, так и в изменённом виде
-
-Подробности лицензии смотрите в файле [LICENSE](LICENSE).
-
-**При использовании пожалуйста укажите автора** (приветствуется)
-
-### Автор
-
-Создано с помощью Grok (xAI) по запросу [@sdtest-me](https://github.com/sdtest-me)
-
-Вдохновлено обсуждением с Raykhona Ibragimova.
+One — we talked.  
+Second — we turned the discussion into a testable tool.
 
 ---
 
-**Хотите улучшить инструмент?**  
-Предлагайте свои идеи через Issues или Pull Requests. Буду рад доработать!
+## 🇬🇧 English
 
-Если вам понравился инструмент — поделитесь ссылкой в LinkedIn или с коллегами.
+### What is Resilix?
+
+**Resilix** is an interactive calculator that shows **how dependent a company is on its people**.
+
+It was created from a real LinkedIn discussion where the statement was made:  
+> “If a business depends only on people — it is not a strong business.”
+
+Now anyone can test this idea on real data.
+
+### Key Features
+
+- Measures **workforce dependency level**
+- Calculates **profit per employee**
+- Shows the **point of no return** — when staff reduction becomes dangerous
+- Compares your company with global giants: **Walmart**, **Amazon**, and **CNPC**
+- Gives a clear verdict: Strong & Independent / Manageable / Critically Dependent
+- Fully bilingual (English / Russian) with language switcher
+
+### Try it live
+
+→ [https://sdtest-me.github.io/business-strength-calculator/](https://sdtest-me.github.io/business-strength-calculator/)
+
+### Quick Examples
+- **Walmart** — 2.1 million employees
+- **Amazon** — 1.58 million employees  
+- **CNPC** — over 1 million employees
+
+### Technology
+- Single HTML file
+- No backend or installation required
+- Works in any modern browser
+- Open source under **MIT License**
+
+### Author
+Created with Grok (xAI) by [@sdtest-me](https://github.com/sdtest-me).
+
+Inspired by the discussion with **Raykhona Ibragimova** on LinkedIn.
+
+---
+
+## 🇷🇺 Русская версия
+
+### Что такое Resilix?
+
+**Resilix** — это интерактивный калькулятор, который показывает, **насколько компания зависит от своего персонала**.
+
+Приложение создано на основе реальной дискуссии в LinkedIn, где прозвучала фраза:  
+> «Если всё держится только на людях — это не сильный бизнес».
+
+Теперь каждый может проверить это утверждение на реальных данных своей компании.
+
+### Возможности
+
+- Оценивает **уровень зависимости от персонала**
+- Рассчитывает **прибыль на одного сотрудника**
+- Показывает **точку невозврата** — когда сокращение штата становится опасным
+- Сравнивает вашу компанию с гигантами: **Walmart**, **Amazon** и **CNPC**
+- Даёт понятный вердикт: Сильный независимый бизнес / Зависит управляемо / Критически зависит
+- Полностью двуязычный интерфейс (английский / русский) с переключателем языка
+
+### Попробовать онлайн
+
+→ [https://sdtest-me.github.io/business-strength-calculator/](https://sdtest-me.github.io/business-strength-calculator/)
+
+### Быстрые примеры
+- **Walmart** — 2,1 млн сотрудников
+- **Amazon** — 1,58 млн сотрудников
+- **CNPC** — более 1 млн сотрудников
+
+### Технологии
+- Один HTML-файл
+- Без сервера и установки
+- Работает в любом современном браузере
+- Открытый исходный код (лицензия MIT)
+
+### Автор
+Создано с помощью Grok (xAI) по запросу [@sdtest-me](https://github.com/sdtest-me).
+
+Вдохновлено дискуссией с **Raykhona Ibragimova** в LinkedIn.
+
+---
+
+**Made to prove the point:**  
+Talking is good. Turning words into testable algorithms is better.
