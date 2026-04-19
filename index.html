@@ -9,7 +9,13 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     body { font-family: 'Inter', system-ui, sans-serif; }
-    .glass { background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); }
+    .glass { 
+      background: rgba(255,255,255,0.95); 
+      backdrop-filter: blur(12px); 
+    }
+    .result-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
   </style>
 </head>
 <body class="bg-gradient-to-br from-indigo-50 via-white to-cyan-50 min-h-screen">
@@ -102,8 +108,8 @@
       </button>
     </div>
 
-    <!-- Результат -->
-    <div id="result" class="hidden">
+    <!-- Блок результатов -->
+    <div id="result" class="hidden result-card">
       <div class="glass rounded-3xl shadow-2xl p-8 md:p-10">
         
         <!-- Вердикт -->
@@ -153,7 +159,7 @@
         <div id="criticalPoint" class="rounded-3xl p-8 border-2 border-amber-300 bg-amber-50"></div>
 
         <div class="text-center mt-12">
-          <button onclick="window.location.reload()" 
+          <button onclick="newCalculation()" 
                   class="text-indigo-600 hover:text-indigo-700 font-medium text-lg flex items-center gap-2 mx-auto">
             ← Новый расчёт
           </button>
@@ -163,7 +169,8 @@
   </div>
 
   <script>
-    // === Основная функция анализа ===
+    let myChart = null;
+
     function analyze() {
       const company = document.getElementById('company').value.trim() || 'Компания';
       const employees = parseFloat(document.getElementById('employees').value) || 0;
@@ -212,8 +219,9 @@
 
       // Радарный график
       const ctx = document.getElementById('radarChart');
-      if (window.myChart) window.myChart.destroy();
-      window.myChart = new Chart(ctx, {
+      if (myChart) myChart.destroy();
+      
+      myChart = new Chart(ctx, {
         type: 'radar',
         data: {
           labels: ['Независимость от людей', 'Автоматизация', 'Прибыль на сотрудника', 'Масштаб'],
@@ -257,7 +265,6 @@
       document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Загрузка примеров
     function loadExample(n) {
       const presets = [
         {company: 'Walmart', employees: 2100000, profit: 21.9, revenue: 706, laborCost: 21, automation: 35},
@@ -275,13 +282,20 @@
       analyze();
     }
 
-    // Обновление ползунка
+    function newCalculation() {
+      document.getElementById('result').classList.add('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Обновление значения ползунка
     document.getElementById('automation').addEventListener('input', function() {
       document.getElementById('automationValue').textContent = this.value + '%';
     });
 
-    // Автозапуск при открытии страницы
-    window.onload = () => setTimeout(analyze, 400);
+    // При загрузке страницы результат скрыт
+    window.onload = () => {
+      document.getElementById('result').classList.add('hidden');
+    };
   </script>
 </body>
 </html>
