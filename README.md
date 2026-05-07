@@ -73,6 +73,7 @@ open docs/index.html
 
 # 3. Customize for new client:
 #    Edit only 5 lines in docs/index.html (inside <script>):
+```
 
 ---
 
