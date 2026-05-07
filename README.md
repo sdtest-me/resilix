@@ -64,7 +64,7 @@ Resilix maps organizational units to Spiral Dynamics stages (vMEME), ordered lef
 
 ## 🚀 Quick Start (Automation-First)
 
-
+```bash
 # 1. Clone & init (if starting fresh)
 git clone https://github.com/sdtest-me/resilix.git ~/resilix && cd ~/resilix
 
