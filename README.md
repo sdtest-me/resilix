@@ -20,7 +20,7 @@
   "roi": "Preventing ONE $100M disruption = 80x annual investment",
   "cta": "Internal data calibration → 94% accuracy → Sponsor Lab"
 }
-
+```` 
 ---
 
 ## 🧭 Spiral Dynamics Integration
