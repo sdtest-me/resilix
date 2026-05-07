@@ -63,7 +63,7 @@ resilix/
 
 ## 🚀 Quick Start (Automation-First)
 
-```bash
+
 # 1. Clone & init (if starting fresh)
 git clone https://github.com/sdtest-me/resilix.git ~/resilix && cd ~/resilix
 
@@ -77,7 +77,7 @@ open docs/index.html
 
 ## 💰 Business Model: JTBD Satellite ₒ Sponsor Lab
 
-```
+
 Public Demo (resilix.sdtest.me)
 ↓
 30-sec scan: pain + ROI + stage map
@@ -87,7 +87,7 @@ Public Demo (resilix.sdtest.me)
 [🔒 Request Custom Risk Report & Calibration Session]
 ↓
 Sponsor Lab (€10k/mo): Internal calibration • Executive workshop • Quarterly review
-```
+
 
 **Why this converts**:
 - €10k/mo = ~0.003% of enterprise revenue → signal of quality, not cost
