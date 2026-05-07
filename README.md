@@ -116,7 +116,7 @@ This repo is maintained by Valerii Kosenko for SDTEST® product development.
 
 ## 📔 Contact
 
-- Product feedback: [info@sdtest.me](mailto:valerii@sdtest.me)
+- Product feedback: [info@sdtest.me](mailto:info@sdtest.me)
 - GitHub: [sdtest-me/resilix](https://github.com/sdtest-me/resilix)
 
 ---
