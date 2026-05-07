@@ -1,67 +1,62 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Resilix Demo — AITAS KZ</title><style>
-:root{--bg-primary:#f8f9fa;--bg-secondary:#fff;--text-primary:#1a1a2e;--text-secondary:#666;--border:#eee;--shadow:rgba(0,0,0,0.08);--card-bg:#fff}
-[data-theme="dark"]{--bg-primary:#0f1419;--bg-secondary:#1a1f2e;--text-primary:#e8e8e8;--text-secondary:#a0a0a0;--border:#2a3441;--shadow:rgba(0,0,0,0.3);--card-bg:#1a1f2e}
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.5;color:var(--text-primary);background:var(--bg-primary);transition:all 0.3s ease}
+:root{--bg:#f8f9fa;--card:#fff;--txt:#1a1a2e;--txt2:#666;--brd:#eee;--shd:rgba(0,0,0,0.08)}
+[data-theme="dark"]{--bg:#0f1419;--card:#1a1f2e;--txt:#e8e8e8;--txt2:#a0a0a0;--brd:#2a3441;--shd:rgba(0,0,0,0.3)}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.5;color:var(--txt);background:var(--bg);transition:0.3s}
 .container{max-width:900px;margin:0 auto;padding:24px}.header{background:linear-gradient(135deg,#1a1a2e,#16213e);color:#fff;padding:32px 24px;border-radius:12px;margin-bottom:24px}
-.header h1{font-size:28px;margin-bottom:8px}.header .tag{display:inline-block;background:#e94560;color:#fff;padding:4px 12px;border-radius:20px;font-size:12px;margin-bottom:12px}
-.header .cta{display:inline-block;background:#4ecca3;color:#1a1a2e;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;margin-top:16px}
-.card{background:var(--card-bg);padding:20px;border-radius:12px;margin-bottom:16px;box-shadow:0 2px 8px var(--shadow);border-left:4px solid var(--border)}
-.card.danger{border-left-color:#e94560}.card.warning{border-left-color:#f39c12}.card.success{border-left-color:#4ecca3}
-.metric{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border)}.metric:last-child{border-bottom:none}
-.metric-value{font-size:24px;font-weight:700}.metric-value.red{color:#e94560}.metric-value.yellow{color:#f39c12}.metric-value.green{color:#4ecca3}
-.stage-bar{display:flex;height:8px;border-radius:4px;overflow:hidden;margin:8px 0}.stage-bar span{display:block;height:100%}.stage-beige{background:#d7ccc8}.stage-red{background:#c62828}.stage-blue{background:#1565c0}.stage-orange{background:#ef6c00}.stage-green{background:#2e7d32}.stage-yellow{background:#f9a825}
-.bridge{background:linear-gradient(135deg,var(--bg-primary),var(--border));padding:20px;border-radius:12px;text-align:center;margin-top:24px}
-.bridge .highlight{font-weight:700;color:var(--text-primary)}.lang-toggle,.theme-toggle{display:flex;gap:8px}.lang-toggle button,.theme-toggle button{background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-primary);padding:6px 12px;border-radius:6px;cursor:pointer;font-size:14px;transition:all 0.2s}.lang-toggle button:hover,.theme-toggle button:hover{background:var(--border)}.lang-toggle button.active,.theme-toggle button.active{background:#1a1a2e;color:#fff;border-color:#1a1a2e}[data-theme="dark"] .lang-toggle button.active,[data-theme="dark"] .theme-toggle button.active{background:#4ecca3;color:#1a1a2e;border-color:#4ecca3}
-.controls{display:flex;justify-content:flex-end;gap:12px;margin-bottom:16px}@media(max-width:600px){.header h1{font-size:22px}.metric-value{font-size:20px}.controls{flex-direction:column;align-items:flex-end}}
+.header h1{font-size:28px;margin-bottom:8px}.tag{display:inline-block;background:#e94560;color:#fff;padding:4px 12px;border-radius:20px;font-size:12px;margin-bottom:12px}
+.cta{display:inline-block;background:#4ecca3;color:#1a1a2e;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;margin-top:16px}
+.card{background:var(--card);padding:20px;border-radius:12px;margin-bottom:16px;box-shadow:0 2px 8px var(--shd);border-left:4px solid var(--brd)}
+.danger{border-left-color:#e94560}.warning{border-left-color:#f39c12}.success{border-left-color:#4ecca3}
+.metric{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--brd)}.metric:last-child{border-bottom:none}
+.metric-value{font-size:24px;font-weight:700}.red{color:#e94560}.yellow{color:#f39c12}.green{color:#4ecca3}
+.stage-bar{display:flex;height:8px;border-radius:4px;overflow:hidden;margin:8px 0}.stage-bar span{display:block;height:100%}
+.beige{background:#d7ccc8}.red-b{background:#c62828}.blue{background:#1565c0}.orange{background:#ef6c00}.green-b{background:#2e7d32}.yellow-b{background:#f9a825}
+.bridge{background:linear-gradient(135deg,var(--bg),var(--brd));padding:20px;border-radius:12px;text-align:center;margin-top:24px}
+.controls{display:flex;justify-content:flex-end;gap:8px;margin-bottom:16px}.controls button{background:var(--card);border:1px solid var(--brd);color:var(--txt);padding:6px 12px;border-radius:6px;cursor:pointer}
+.controls button.active{background:#1a1a2e;color:#fff;border-color:#1a1a2e}[data-theme="dark"] .controls button.active{background:#4ecca3;color:#1a1a2e}
+@media(max-width:600px){.header h1{font-size:22px}.metric-value{font-size:20px}}
 </style></head><body>
 <div class="container">
 <div class="controls">
-<div class="lang-toggle"><button class="active" onclick="setLang('en')">EN</button><button onclick="setLang('ru')">RU</button></div>
-<div class="theme-toggle"><button onclick="toggleTheme()" id="theme-btn">🌙 Dark</button></div>
+<button class="active" onclick="setLang('en')">EN</button><button onclick="setLang('ru')">RU</button>
+<button onclick="toggleTheme()" id="theme-btn">🌙 Dark</button>
 </div>
-
 <div class="header">
 <span class="tag">Resilix Demo</span>
-<h1 id="title">AITAS KZ: Organizational Resilience Check</h1>
-<p id="subtitle">Value-system alignment across 4,840 employees • 6+ locations • Public data only</p>
-<a href="#bridge" class="cta" id="cta-btn">See Sponsor Lab Access →</a>
+<h1 id="t1">AITAS KZ: Organizational Resilience Check</h1>
+<p id="t2">Value-system alignment across 4,840 employees • 6+ locations • Public data only</p>
+<a href="#bridge" class="cta" id="t3">See Sponsor Lab Access →</a>
 </div>
-
 <div class="card danger">
-<div class="metric"><span id="score-label">Value Gap Score</span><span class="metric-value red" id="score-value">68/100</span></div>
-<p id="score-desc" style="margin-top:12px;color:var(--text-secondary)">Gap between HQ mission (Yellow/Green) and operational reality (Blue/Orange). Risk of strategic drift.</p>
+<div class="metric"><span id="l1">Value Gap Score</span><span class="metric-value red" id="v1">68/100</span></div>
+<p id="d1" style="margin-top:12px;color:var(--txt2)">Gap between HQ mission (Yellow/Green) and operational reality (Blue/Orange). Risk of strategic drift.</p>
 </div>
-
 <div class="card warning">
-<div class="metric"><span id="risk-label">Key-Person Dependency</span><span class="metric-value yellow">HIGH</span></div>
-<p id="risk-desc" style="margin-top:12px">If Director of UKPF leaves: <strong>72% probability</strong> of supply chain disruption to China within 90 days due to undocumented decision protocols.</p>
+<div class="metric"><span id="l2">Key-Person Dependency</span><span class="metric-value yellow">HIGH</span></div>
+<p id="d2" style="margin-top:12px">If Director of UKPF leaves: <strong>72% probability</strong> of supply chain disruption to China within 90 days due to undocumented decision protocols.</p>
 </div>
-
 <div class="card">
-<div class="metric"><span id="stage-label">Spiral Dynamics Map</span></div>
-<div style="margin:12px 0"><small>HQ (Almaty/Astana)</small><div class="stage-bar"><span class="stage-yellow" style="width:40%"></span><span class="stage-green" style="width:30%"></span><span class="stage-orange" style="width:30%"></span></div></div>
-<div style="margin:12px 0"><small>Operations (UKPF/Makinsk)</small><div class="stage-bar"><span class="stage-blue" style="width:50%"></span><span class="stage-orange" style="width:40%"></span><span class="stage-red" style="width:10%"></span></div></div>
-<div style="margin:12px 0"><small>Rural Staff</small><div class="stage-bar"><span class="stage-beige" style="width:30%"></span><span class="stage-red" style="width:50%"></span><span class="stage-blue" style="width:20%"></span></div></div>
-<p id="stage-desc" style="margin-top:12px;color:var(--text-secondary);font-size:14px">Misalignment creates friction in strategy execution, talent retention, and change adoption.</p>
+<div class="metric"><span id="l3">Spiral Dynamics Map</span></div>
+<div style="margin:8px 0"><small>HQ (Almaty/Astana)</small><div class="stage-bar"><span class="yellow-b" style="width:40%"></span><span class="green-b" style="width:30%"></span><span class="orange" style="width:30%"></span></div></div>
+<div style="margin:8px 0"><small>Operations (UKPF/Makinsk)</small><div class="stage-bar"><span class="blue" style="width:50%"></span><span class="orange" style="width:40%"></span><span class="red-b" style="width:10%"></span></div></div>
+<div style="margin:8px 0"><small>Rural Staff</small><div class="stage-bar"><span class="beige" style="width:30%"></span><span class="red-b" style="width:50%"></span><span class="blue" style="width:20%"></span></div></div>
+<p id="d3" style="margin-top:8px;color:var(--txt2);font-size:14px">Misalignment creates friction in strategy execution, talent retention, and change adoption.</p>
 </div>
-
 <div class="card success">
-<div class="metric"><span id="rec-label">90-Day Stabilization Plan</span></div>
-<p id="rec-value" style="margin-top:12px;font-weight:500">Close Blue-Yellow gap: implement stage-aware documentation rituals + cross-location value alignment workshops.</p>
+<div class="metric"><span id="l4">90-Day Stabilization Plan</span></div>
+<p id="d4" style="margin-top:12px;font-weight:500">Close Blue-Yellow gap: implement stage-aware documentation rituals + cross-location value alignment workshops.</p>
 </div>
-
 <div class="bridge" id="bridge">
-<p class="highlight" id="bridge-text">⚠️ Calculated on public ESG data only.</p>
-<p style="margin:8px 0" id="bridge-uplift">💡 With your internal org-data (surveys, process maps, KPIs), accuracy increases to <strong>94%</strong></p>
-<a href="mailto:lab@sdtest.me?subject=Sponsor%20Lab%20Access%20-%20AITAS%20KZ" class="cta" style="background:#1a1a2e;color:#fff;margin-top:16px" id="bridge-cta">🔒 Request Sponsor Lab Access — €10k/mo</a>
-<p style="margin-top:12px;font-size:12px;color:var(--text-secondary)" id="bridge-note">Includes: internal data calibration • custom stage mapping • executive workshop • quarterly resilience review</p>
+<p style="font-weight:700;margin-bottom:8px" id="b1">⚠️ Calculated on public ESG data only.</p>
+<p style="margin:8px 0" id="b2">💡 With your internal org-data (surveys, process maps, KPIs), accuracy increases to <strong>94%</strong></p>
+<p style="margin:12px 0 8px;font-weight:600;color:#2e7d32" id="b3"> ROI Insight: Preventing disruption to the $100M China supply contract saves ~$10M. Annual investment: €120k. Potential ROI: 80x+</p>
+<a href="mailto:lab@sdtest.me?subject=Sponsor%20Lab%20Access%20-%20AITAS%20KZ" class="cta" style="background:#1a1a2e;color:#fff;margin-top:8px" id="b4">🔒 Request Sponsor Lab Access — €10k/mo</a>
+<p style="margin-top:12px;font-size:12px;color:var(--txt2)" id="b5">Includes: internal data calibration • custom stage mapping • executive workshop • quarterly resilience review</p>
 </div>
 </div>
-
 <script>
-const content={en:{title:"AITAS KZ: Organizational Resilience Check",subtitle:"Value-system alignment across 4,840 employees • 6+ locations • Public data only",cta:"See Sponsor Lab Access →",scoreLabel:"Value Gap Score",scoreDesc:"Gap between HQ mission (Yellow/Green) and operational reality (Blue/Orange). Risk of strategic drift.",riskLabel:"Key-Person Dependency",riskDesc:"If Director of UKPF leaves: <strong>72% probability</strong> of supply chain disruption to China within 90 days due to undocumented decision protocols.",stageLabel:"Spiral Dynamics Map",stageDesc:"Misalignment creates friction in strategy execution, talent retention, and change adoption.",recLabel:"90-Day Stabilization Plan",recValue:"Close Blue-Yellow gap: implement stage-aware documentation rituals + cross-location value alignment workshops.",bridgeText:"⚠️ Calculated on public ESG data only.",bridgeUplift:"💡 With your internal org-data (surveys, process maps, KPIs), accuracy increases to <strong>94%</strong>",bridgeCta:"🔒 Request Sponsor Lab Access — €10k/mo",bridgeNote:"Includes: internal data calibration • custom stage mapping • executive workshop • quarterly resilience review"},ru:{title:"AITAS KZ: Проверка устойчивости организации",subtitle:"Согласование ценностей: 4 840 сотрудников • 6+ локаций • Только публичные данные",cta:"Получить доступ к Sponsor Lab →",scoreLabel:"Разрыв ценностей",scoreDesc:"Разрыв между миссией штаб-квартиры (Yellow/Green) и операционной реальностью (Blue/Orange). Риск стратегического дрейфа.",riskLabel:"Зависимость от ключевых людей",riskDesc:"Если уйдёт директор УКПФ: <strong>72% вероятность</strong> срыва поставок в Китай в течение 90 дней из-за недокументированных протоколов решений.",stageLabel:"Карта Спиральной Динамики",stageDesc:"Несоответствие создаёт трение в исполнении стратегии, удержании талантов и внедрении изменений.",recLabel:"План стабилизации на 90 дней",recValue:"Закрыть разрыв Blue-Yellow: внедрить ритуалы документации с учётом стадий + воркшопы по согласованию ценностей между локациями.",bridgeText:"⚠️ Расчёт на публичных данных только.",bridgeUplift:"💡 С вашими внутренними данными (опросы, карты процессов, KPI) точность вырастет до <strong>94%</strong>",bridgeCta:"🔒 Запросить доступ к Sponsor Lab — €10k/мес",bridgeNote:"Включает: калибровка на внутренних данных • кастомная карта стадий • воркшоп для руководства • квартальный обзор устойчивости"}};
-function setLang(lang){document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');Object.keys(content[lang]).forEach(k=>{const el=document.getElementById(k.replace(/([A-Z])/g,'-$1').toLowerCase().replace('-label','').replace('-desc','').replace('-value','').replace('-text','').replace('-uplift','').replace('-cta','').replace('-note',''));if(el&&content[lang][k])el.innerHTML=content[lang][k]})}
-function toggleTheme(){const html=document.documentElement;const btn=document.getElementById('theme-btn');if(html.getAttribute('data-theme')==='dark'){html.removeAttribute('data-theme');btn.textContent='🌙 Dark';localStorage.setItem('theme','light')}else{html.setAttribute('data-theme','dark');btn.textContent='☀️ Light';localStorage.setItem('theme','dark')}}
-const savedTheme=localStorage.getItem('theme');if(savedTheme==='dark'){document.documentElement.setAttribute('data-theme','dark');document.getElementById('theme-btn').textContent='☀️ Light'}
-</script>
-</body></html>
+const c={en:{t1:"AITAS KZ: Organizational Resilience Check",t2:"Value-system alignment across 4,840 employees • 6+ locations • Public data only",t3:"See Sponsor Lab Access →",l1:"Value Gap Score",d1:"Gap between HQ mission (Yellow/Green) and operational reality (Blue/Orange). Risk of strategic drift.",l2:"Key-Person Dependency",d2:"If Director of UKPF leaves: <strong>72% probability</strong> of supply chain disruption to China within 90 days due to undocumented decision protocols.",l3:"Spiral Dynamics Map",d3:"Misalignment creates friction in strategy execution, talent retention, and change adoption.",l4:"90-Day Stabilization Plan",d4:"Close Blue-Yellow gap: implement stage-aware documentation rituals + cross-location value alignment workshops.",b1:"⚠️ Calculated on public ESG data only.",b2:"💡 With your internal org-data (surveys, process maps, KPIs), accuracy increases to <strong>94%</strong>",b3:"💡 ROI Insight: Preventing disruption to the $100M China supply contract saves ~$10M. Annual investment: €120k. Potential ROI: 80x+",b4:"🔒 Request Sponsor Lab Access — €10k/mo",b5:"Includes: internal data calibration • custom stage mapping • executive workshop • quarterly resilience review"},ru:{t1:"AITAS KZ: Проверка устойчивости организации",t2:"Согласование ценностей: 4 840 сотрудников • 6+ локаций • Только публичные данные",t3:"Получить доступ к Sponsor Lab →",l1:"Разрыв ценностей",d1:"Разрыв между миссией штаб-квартиры (Yellow/Green) и операционной реальностью (Blue/Orange). Риск стратегического дрейфа.",l2:"Зависимость от ключевых людей",d2:"Если уйдёт директор УКПФ: <strong>72% вероятность</strong> срыва поставок в Китай в течение 90 дней из-за недокументированных протоколов решений.",l3:"Карта Спиральной Динамики",d3:"Несоответствие создаёт трение в исполнении стратегии, удержании талантов и внедрении изменений.",l4:"План стабилизации на 90 дней",d4:"Закрыть разрыв Blue-Yellow: внедрить ритуалы документации с учётом стадий + воркшопы по согласованию ценностей между локациями.",b1:"⚠️ Расчёт на публичных данных только.",b2:" С вашими внутренними данными (опросы, карты процессов, KPI) точность вырастет до <strong>94%</strong>",b3:"💡 ROI: Предотвращение срыва контракта с Китаем ($100 млн) сохраняет ~$10 млн. Инвестиция: €120k/год. Потенциальный ROI: 80x+",b4:"🔒 Запросить доступ к Sponsor Lab — €10k/мес",b5:"Включает: калибровка на внутренних данных • кастомная карта стадий • воркшоп для руководства • квартальный обзор устойчивости"}};
+function setLang(l){document.querySelectorAll('.controls button').forEach((b,i)=>{if(i<2)b.classList.toggle('active',b.textContent.trim()===l.toUpperCase())});for(let k in c[l]){let el=document.getElementById(k);if(el)el.innerHTML=c[l][k]}}
+function toggleTheme(){let h=document.documentElement,b=document.getElementById('theme-btn');if(h.getAttribute('data-theme')==='dark'){h.removeAttribute('data-theme');b.textContent='🌙 Dark';localStorage.setItem('theme','light')}else{h.setAttribute('data-theme','dark');b.textContent='☀️ Light';localStorage.setItem('theme','dark')}}
+if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');document.getElementById('theme-btn').textContent='☀️ Light'}
+</script></body></html>
