@@ -44,15 +44,16 @@ Resilix maps organizational units to Spiral Dynamics stages (vMEME), ordered lef
 
 ## 🏗️ Architecture
 
-resilix/
+``` resilix/
 ├── docs/index.html # GitHub Pages demo (EN/RU, Light/Dark)
 ├── prompts/jtbd/ # JTBD prompt templates
 ├── data/demo/ # Public datasets (ESG, job boards)
 ├── data/sources/ # Local PDFs (*.gitignored)
 ├── output/ # Generated JSON outputs
-└── src/ # Future: core engine (JS/TS)
+└── src/ # Future: core engine (JS/TS)``` 
 
 
+``` 
 **Key design principles**:
 - ✅ **Product-centric naming**: `resilix-org-resilience.html` (not client-locked)
 - ✅ **Client config in one place**: `const CLIENT = { name, risk, score... }`
