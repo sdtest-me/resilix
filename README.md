@@ -20,7 +20,7 @@
   "roi": "Preventing ONE $100M disruption = 80x annual investment",
   "cta": "Internal data calibration → 94% accuracy → Sponsor Lab"
 }
-```` 
+```
 ---
 
 ## 🧭 Spiral Dynamics Integration
@@ -44,23 +44,22 @@ Resilix maps organizational units to Spiral Dynamics stages (vMEME), ordered lef
 
 ## 🏗️ Architecture
 
-``` resilix/
+```
+resilix/
 ├── docs/index.html # GitHub Pages demo (EN/RU, Light/Dark)
 ├── prompts/jtbd/ # JTBD prompt templates
 ├── data/demo/ # Public datasets (ESG, job boards)
 ├── data/sources/ # Local PDFs (*.gitignored)
 ├── output/ # Generated JSON outputs
-└── src/ # Future: core engine (JS/TS)``` 
+└── src/ # Future: core engine (JS/TS)
+```
 
 
-``` 
 **Key design principles**:
 - ✅ **Product-centric naming**: `resilix-org-resilience.html` (not client-locked)
 - ✅ **Client config in one place**: `const CLIENT = { name, risk, score... }`
 - ✅ **Conversion bridge built-in**: "Public data → 94% with internal data → Sponsor Lab"
 - ✅ **Zero external dependencies**: Single HTML file, works offline
-
---.
 
 ## 🚀 Quick Start (Automation-First)
 
@@ -77,7 +76,7 @@ open docs/index.html
 
 ---
 
-## 💰 Business Model: JTBD Satellite ₒ Sponsor Lab
+## 💰 Business Model: JTBD Satellite → Sponsor Lab
 
 
 Public Demo (resilix.sdtest.me)
