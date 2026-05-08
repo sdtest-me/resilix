@@ -1,0 +1,16 @@
+name: Markdown & Repo Checks
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate README
+        run: |
+          set -e
+          FENCES=$(grep -c '```' README.md || true)
+          [ $((FENCES % 2)) -eq 0 ] || { echo "❌ Unclosed code fence"; exit 1; }
+          grep -q 'ₒ' README.md && { echo "❌ Found 'ₒ' instead of '→'"; exit 1; } || true
+          grep -q '\-\-\.' README.md && { echo "❌ Found '--.' instead of '---'"; exit 1; } || true
+          echo "✅ README checks passed"
