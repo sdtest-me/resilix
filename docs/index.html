@@ -87,4 +87,5 @@ function setLang(l){document.querySelectorAll('.controls button').forEach((b,i)=
 function toggleTheme(){let h=document.documentElement,b=document.getElementById('theme-btn');if(h.getAttribute('data-theme')==='dark'){h.removeAttribute('data-theme');b.textContent='🌙 Dark';localStorage.setItem('theme','light')}else{h.setAttribute('data-theme','dark');b.textContent='☀️ Light';localStorage.setItem('theme','dark')}}
 if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');document.getElementById('theme-btn').textContent='☀️ Light'}
 setLang('en');
-</script></body></html>
+</script><span id="confBadge" class="badge">Confidence: <strong>medium</strong></span>
+</body></html>
