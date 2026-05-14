@@ -2,7 +2,11 @@
 
 > **Enterprise Preview** | Powered by SDTEST® | Spiral Dynamics Intelligence
 
-[l Live Demo](https://sdtest-me.github.io/resilix/) • [🔒 Sponsor Lab](mailto:https://sdtest.me/price#tariff-10?subject=Resilix%20Sponsor%20Lab%20Access)
+[🌐 Live Demo](https://sdtest-me.github.io/resilix/)
+
+---
+🌐 Language
+🇬🇧 [English](#english) • 🇷🇺 [Русский](#russian)
 
 ---
 
