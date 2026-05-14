@@ -1,0 +1,1 @@
+export function addExplainability(score, signals){const confidence=signals.length>5?"high":signals.length>2?"medium":"low";const inferenceType=signals.every(s=>s.verified)?"observed":"derived";return{score,confidence,inferenceType,sources:signals.map(s=>s.source)}}

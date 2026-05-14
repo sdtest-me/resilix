@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "required": [
+    "companyName",
+    "dependencyScore",
+    "confidence",
+    "inferenceType",
+    "sources"
+  ],
+  "properties": {
+    "companyName": {
+      "type": "string"
+    },
+    "dependencyScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "inferenceType": {
+      "type": "string",
+      "enum": [
+        "observed",
+        "derived",
+        "hypothesis"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "vMEME_distribution": {
+      "type": "array",
+      "optional": true
+    }
+  }
+}
