@@ -6,38 +6,23 @@
 
 ---
 
-## 🎮 30-Second Executive Scan
-(For: COO, HR Director, CEO of enterprises (4,000+ employees, multi-location)  
-**Pain**: "Everything depends on 1-2 people. If they leave, business collapses."  
-**Resilix solves**: In 30 seconds shows **value-system misalignment** + **key-person dependency risk** + **90-day stabilization plan*(.
-
-```json
-{
-  "dependencyScore": 68,
-  "verdict": "Execution friction zone",
-  "riskScenario": "If critical director leaves: 72% probability of disruption within 90 days",
-  "roi": "Preventing ONE $100M disruption = 80x annual investment",
-  "cta": "Internal data calibration → 94% accuracy → Sponsor Lab"
-}
-```
-
----
-
-
-## 🧍 Spiral Dynamics Integration
+## 🧭 Spiral Dynamics Integration
 
 Resilix maps organizational units to Spiral Dynamics stages (vMEME), ordered left→right:
 
 | Stage | Color | Signal | Risk if Misaligned |
 |-------|-------|--------|--------------------|
-| Beige | 🙌 | Survival, reactive | Operational fragility |
-| Red | 🔟 | Power, control | Key-person dependency |
-| Blue | 🔧 | Rules, discipline | Strategy-execution gap |
-| Orange | 🙰 | KPIs, results | Innovation stagnation |
-| Green | 🙏 | Consensus, culture | Decision paralysis |
-| Yellow | 🙲 | Systems, adaptivity | Over-engineering |
+| Beige | 🟤 | Survival, reactive | Operational fragility |
+| Purple | 🟣 | Tribal belonging, rituals, safety through tradition | Groupthink, exclusion of outsiders, decision by superstition |
+| Red | 🔴 | Power, control | Key-person dependency |
+| Blue | 🔵 | Rules, discipline | Strategy-execution gap |
+| Orange | 🟠 | KPIs, results | Innovation stagnation |
+| Green | 🟢 | Consensus, culture | Decision paralysis |
+| Yellow | 🟡 | Systems, adaptivity | Over-engineering |
+| Turquoise | 💎 | Global perspective, holistic integration, systems-of-systems | Analysis paralysis at global scale, loss of local agency, over-abstraction |
 
-**Visual output**: Stage distribution bars (24px height, inline labels) for instant executive scan.
+Visual output: Stage distribution bars (24px height, inline labels) for instant executive scan.
+
 
 ---
 
