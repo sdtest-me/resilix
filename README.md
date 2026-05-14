@@ -117,3 +117,109 @@ Built with automation-first principles. No fluff. No copy-paste. Just conversion
 
 ## Русский
 > Русский контент будет добавлен после валидации английской версии.
+
+Resilix is a **30-second organizational resilience scanner** for enterprises (4,000+ employees, multi-location).
+
+**Input**: Public signals (ESG reports, job postings, leadership news, Glassdoor/LinkedIn sentiment)  
+**Output**: 
+- Value-system misalignment map (Spiral Dynamics vMEME distribution)
+- Key-person dependency risk score (0–100)
+- 90-day stabilization roadmap (prioritized actions)
+
+**For**: COO, HR Director, Strategy Lead  
+**Pain solved**: "Everything depends on 1–2 people. If they leave, business collapses."
+
+> 🔗 Live Demo: [resilix.sdtest.me](https://sdtest-me.github.io/resilix/)
+
+
+---
+
+## 🎮 30-Second Executive Scan
+
+
+**Pain**: "Everything depends on 1–2 people. If they leave, business collapses."
+
+**Resilix solves**: In 30 seconds shows **value-system misalignment** + **key-person dependency risk** + **90-day stabilization plan**.
+
+```json
+{
+  "dependencyScore": 68,
+  "verdict": "Execution friction zone",
+  "riskScenario": "If critical director leaves: 72% probability of disruption within 90 days",
+  "roi": "Preventing ONE $100M disruption = 80x annual investment"
+}
+
+```json
+{
+  "dependencyScore": 68,
+  "verdict": "Execution friction zone",
+  "riskScenario": "If critical director leaves: 72
+```json
+{
+  "dependencyScore": 68,
+  "verdict": "Execution friction zone",
+  "riskScenario": "If critical director leaves: 72% probability of disruption within 90 days",
+  "roi": "Preventing ONE $100M disruption = 80x annual investment"
+}
+```json
+{
+ "dependencyScore": 68,
+ "verdict": "Execution friction zone",
+ "riskScenario": "If critical director leaves: 72% probability of disruption within 90 days",
+ "roi": "Preventing ONE $100M disruption = 80x annual investment"
+}
+```
+
+---
+
+## 🧭 Spiral Dynamics Integration
+
+| Stage | Color | Signal | Risk if Misaligned |
+|-------|-------|--------|--------------------|
+| Beige | 🟤 | Survival, reactive | Operational fragility |
+| Purple | 🟣 | Tribal belonging, rituals, safety through tradition | Groupthink, exclusion of outsiders, decision by superstition |
+| Red | 🔴 | Power, control | Key-person dependency |
+| Blue | 🔵 | Rules, discipline | Strategy-execution gap |
+| Orange | 🟠 | KPIs, results | Innovation stagnation |
+| Green | 🟢 | Consensus, culture | Decision paralysis |
+| Yellow | 🟡 | Systems, adaptivity | Over-engineering |
+| Turquoise | 💎 | Global perspective, holistic integration, systems-of-systems | Analysis paralysis at global scale, loss of local agency, over-abstraction |
+
+
+---
+
+## 🏗️ Architecture
+
+- **Data Layer**: Public ESG signals, leadership mapping, job market data
+- **Analysis Engine**: Spiral Dynamics vMEME distribution + key-person dependency scoring
+- **Output**: Risk heatmap, 90-day stabilization plan, executive dashboard
+- **Hosting**: GitHub Pages + Sponsor Lab (private)
+
+
+Visual output: Stage distribution bars (24px height, inline labels) for instant executive scan.
+
+
+---
+
+## 📁 Repository Structure
+
+```
+resilix/
+├── docs/
+│   └── index.html          # Live Demo (GitHub Pages)
+├── data/
+│   └── demo/               # Sample JSON outputs
+├── scripts/
+│   └── fetch_esg.py        # Public data collector
+├── .github/workflows/
+│   └── ci.yml              # Auto-deploy + validation
+└── README.md               # This file
+```
+
+
+---
+
+## Русский
+
+> Полный перевод будет добавлен после утверждения английской версии. Структура разделов идентична.
+
