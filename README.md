@@ -83,42 +83,6 @@ const CLIENT = {
 ---
 
 
-## 💤 Business Model: JTBD Satellite ₒ Sponsor Lab
-
-```
-Public Demo (resilix.sdtest.me)
-        →
-30-sec scan: pain + ROI + stage map
-        →
-"Public data ₒ 94% with internal data"
-        ₒ
-[🔌 Request Custom Risk Report & Calibration Session]
-        ↓
-Sponsor Lab (€10k/mo): Internal calibration • Executive workshop • Quarterly review
-```
-
-**Why this converts**:
-- ‬10k/mo = ~0.003% of enterprise revenue ₒ signal of quality, not cost
-- ROI framed *before* price: "80x return on preventing ONE disruption"
-- Language of outcome: "Get CLIENT-Specific Risk Report" (not "Access")
-
---.
-
-## 🐰 JTBD Satellite Pipeline
-
-Resilix is **Layer 0** in SDTEST¹ acquisition architecture:
-
-| Satellite | Industry Pain | Conversion Path |
-|-----------|---------------|-----------------------|
-| `resilix` | Key-person dependency, value misalignment | → Org Resilience Lab |
-| `bank-welfare-analyzer` | Systemic risk, regulatory pressure | → Financial Risk Lab |
-| `hr.sdtest.me` (next) | Talent churn, culture drift | → Human Capital Lab |
-| `gov.sdtest.me` (next) | Policy implementation gap | → Public Sector Lab |
-
-**Scalability**: One template (`resilix-org-resilience.html`) + client config = infinite verticals.
-
---.
-
 ## 🎟 Contributing / Internal Use
 
 This repo is maintained by Valerii Kosenko for SDTEST¾ product development.
