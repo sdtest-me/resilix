@@ -1,6 +1,41 @@
-- Always use short, atomic shell commands
-- Never output long markdown blocks — use base64 or python heredoc
-- For README edits: use python3 << 'PY' ... PY pattern
-- Validate markdown: no raw \n, no broken fences, no artifacts (ₒ, --., ¾)
-- Keep EN section first, RU section last
-- After each edit: git diff --stat before push
+# Resilix Code Generation Rules (for Cursor Ask / AI)
+
+## Function Format
+- Export as: `export function name(args): ReturnType`
+- Pure functions only: input → output, no side effects
+- Max 25 lines per function (excluding comments)
+- JSDoc required for public exports
+
+## Testing
+- Every new function needs `tests/[name].test.js`
+- Tests must cover: happy path, edge case, invalid input
+- Run: `node tests/[name].test.js` — must exit 0 on pass
+- No external test libs (use Node.js assert only)
+
+## Validation
+- All JSON output must match `data/schema.json`
+- Run `scripts/validate_json.py <file>` before commit
+- CI fails on schema mismatch or lint error
+
+## File Structure
+- New logic → `src/[feature].js`
+- New tests → `tests/[feature].test.js`
+- New data → `data/demo/[client].json`
+- No changes to `docs/index.html` without ISSUE link
+
+## Output Constraints
+- Bundle size: <10KB minified per module
+- No external dependencies (vanilla JS / Python stdlib)
+- Must work offline (GitHub Pages)
+- EN strings only in code; RU via i18n map
+
+## Commit Rules
+- One ISSUE per commit: `feat: [ISSUE#N] short desc`
+- Include validation step in commit message
+- Run `git diff --stat` before push
+
+## AI Editing Rules
+- Use atomic shell commands only
+- Never output long markdown/code blocks
+- For file edits: use `python3 << 'PY' ... PY` or base64
+- After each edit: show `git diff --stat` summary
