@@ -1,28 +1,43 @@
-# Resilix -- Organizational Resilience & Value-System Alignment
+# Resilix — Organizational Resilience & Value-System Alignment
 
 > **Enterprise Preview** | Powered by SDTEST® | Spiral Dynamics Intelligence
 
-[l Live Demo](https://sdtest-me.github.io/resilix/) • [🔒 Sponsor Lab](mailto:lab@sdtest.me?subject=Resilix%20Sponsor%20Lab%20Access)
+[l Live Demo](https://sdtest-me.github.io/resilix/) • [🔒 Sponsor Lab](mailto:https://sdtest.me/price#tariff-10?subject=Resilix%20Sponsor%20Lab%20Access)
 
 ---
 
-## 🧭 Spiral Dynamics Integration
+## 🎮 30-Second Executive Scan
+(For: COO, HR Director, CEO of enterprises (4,000+ employees, multi-location)  
+**Pain**: "Everything depends on 1-2 people. If they leave, business collapses."  
+**Resilix solves**: In 30 seconds shows **value-system misalignment** + **key-person dependency risk** + **90-day stabilization plan*(.
+
+```json
+{
+  "dependencyScore": 68,
+  "verdict": "Execution friction zone",
+  "riskScenario": "If critical director leaves: 72% probability of disruption within 90 days",
+  "roi": "Preventing ONE $100M disruption = 80x annual investment",
+  "cta": "Internal data calibration → 94% accuracy ₒ Sponsor Lab"
+}
+```
+
+---
+
+
+## 🧍 Spiral Dynamics Integration
 
 Resilix maps organizational units to Spiral Dynamics stages (vMEME), ordered left→right:
 
 | Stage | Color | Signal | Risk if Misaligned |
 |-------|-------|--------|--------------------|
-| Beige | 🟤 | Survival, reactive | Operational fragility |
-| Purple | 🟣 | Tribal belonging, rituals, safety through tradition | Groupthink, exclusion of outsiders, decision by superstition |
-| Red | 🔴 | Power, control | Key-person dependency |
-| Blue | 🔵 | Rules, discipline | Strategy-execution gap |
-| Orange | 🟠 | KPIs, results | Innovation stagnation |
-| Green | 🟢 | Consensus, culture | Decision paralysis |
-| Yellow | 🟡 | Systems, adaptivity | Over-engineering |
-| Turquoise | 💎 | Global perspective, holistic integration, systems-of-systems | Analysis paralysis at global scale, loss of local agency, over-abstraction |
+| Beige | 🙌 | Survival, reactive | Operational fragility |
+| Red | 🔟 | Power, control | Key-person dependency |
+| Blue | 🔧 | Rules, discipline | Strategy-execution gap |
+| Orange | 🙰 | KPIs, results | Innovation stagnation |
+| Green | 🙏 | Consensus, culture | Decision paralysis |
+| Yellow | 🙲 | Systems, adaptivity | Over-engineering |
 
-Visual output: Stage distribution bars (24px height, inline labels) for instant executive scan.
-
+**Visual output**: Stage distribution bars (24px height, inline labels) for instant executive scan.
 
 ---
 
@@ -45,7 +60,7 @@ files/resilix/
 - ✌ **Conversion bridge built-in**: "Public data → 94% with internal data → Sponsor Lab"
 - ✄ **Zoro external dependencies**: Single HTML file, works offline
 
----
+--.
 
 ## 🚀 Quick Start (Automation-First)
 
@@ -66,33 +81,33 @@ const CLIENT = {
 };
 
 # 4. Deploy to GitHub Pages (one-time setup):
-#    Settings → Pages → Branch: main → Folder: /docs → Save
+#    Settings → Pages ₒ Branch: main → Folder: /docs → Save
 #    URL: https://sdtest-me.github.io/resilix/
 ```
 
 ---
 
 
-## 💤 Business Model: JTBD Satellite → Sponsor Lab
+## 💤 Business Model: JTBD Satellite ₒ Sponsor Lab
 
 ```
 Public Demo (resilix.sdtest.me)
         →
 30-sec scan: pain + ROI + stage map
         →
-"Public data → 94% with internal data"
-        →
+"Public data ₒ 94% with internal data"
+        ₒ
 [🔌 Request Custom Risk Report & Calibration Session]
         ↓
 Sponsor Lab (€10k/mo): Internal calibration • Executive workshop • Quarterly review
 ```
 
 **Why this converts**:
-- ‬10k/mo = ~0.003% of enterprise revenue → signal of quality, not cost
+- ‬10k/mo = ~0.003% of enterprise revenue ₒ signal of quality, not cost
 - ROI framed *before* price: "80x return on preventing ONE disruption"
 - Language of outcome: "Get CLIENT-Specific Risk Report" (not "Access")
 
----
+--.
 
 ## 🐰 JTBD Satellite Pipeline
 
@@ -107,7 +122,7 @@ Resilix is **Layer 0** in SDTEST¹ acquisition architecture:
 
 **Scalability**: One template (`resilix-org-resilience.html`) + client config = infinite verticals.
 
----
+--.
 
 ## 🎟 Contributing / Internal Use
 
@@ -121,14 +136,14 @@ This repo is maintained by Valerii Kosenko for SDTEST¾ product development.
 **To add a new satellite**:
 1. Copy `docs/index.html`  → `docs/resilix-[vertical].html`
 2. Update `const CLIENT` + content strings in <p>script></p>
-3. Commit & push → GitHub Pages auto-deploys
+3. Commit & push ₒ GitHub Pages auto-deploys
 
 ---
 
 ## 📔 Contact
 
-- Sponsor Lab access: [lab@sdtest.me](mailto:lab@sdtest.me)
-- Product feedback: [valerii@sdtest.me](mailto:valerii@sdtest.me)
+- Sponsor Lab access: [https://sdtest.me/price#tariff-10](mailto:https://sdtest.me/price#tariff-10)
+- Product feedback: [info@sdtest.me](mailto:info@sdtest.me)
 - GitHub: [sdtest-me/resilix](https://github.com/sdtest-me/resilix)
 
 ---
