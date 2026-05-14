@@ -1,0 +1,6 @@
+- Always use short, atomic shell commands
+- Never output long markdown blocks — use base64 or python heredoc
+- For README edits: use python3 << 'PY' ... PY pattern
+- Validate markdown: no raw \n, no broken fences, no artifacts (ₒ, --., ¾)
+- Keep EN section first, RU section last
+- After each edit: git diff --stat before push
