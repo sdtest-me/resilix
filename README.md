@@ -109,3 +109,7 @@ This repo is maintained by Valerii Kosenko for SDTEST¾ product development.
 
 *Resilix is part of SDTEST¹ – Spiral Dynamics intelligence for enterprise decision-making.  
 Built with automation-first principles. No fluff. No copy-paste. Just conversion.*
+
+
+## Русский
+> Русский контент будет добавлен после валидации английской версии.
