@@ -30,19 +30,14 @@ Resilix maps organizational units to Spiral Dynamics stages (vMEME), ordered lef
 
 | Stage | Color | Signal | Risk if Misaligned |
 |-------|-------|--------|--------------------|
-| Beige | 🙌 | Survival, reactive | Operational fragility |
-| Red | 🔟 | Power, control | Key-person dependency |
-| Blue | 🔧 | Rules, discipline | Strategy-execution gap |
-| Orange | 🙰 | KPIs, results | Innovation stagnation |
-| Green | 🙏 | Consensus, culture | Decision paralysis |
-| Yellow | 🙲 | Systems, adaptivity | Over-engineering |
-
-**Visual output**: Stage distribution bars (24px height, inline labels) for instant executive scan.
-
----
-
-
-## 🏯 Architecture
+| Beige | 🟤 | Survival, reactive | Operational fragility |
+| Purple | 🟣 | Tribal belonging, rituals, safety through tradition | Groupthink, exclusion of outsiders, decision by superstition |
+| Red | 🔴 | Power, control | Key-person dependency |
+| Blue | 🔵 | Rules, discipline | Strategy-execution gap |
+| Orange | 🟠 | KPIs, results | Innovation stagnation |
+| Green | 🟢 | Consensus, culture | Decision paralysis |
+| Yellow | 🟡 | Systems, adaptivity | Over-engineering |
+| Turquoise | 💎 | Global perspective, holistic integration, systems-of-systems | Analysis paralysis at global scale, loss of local agency, over-abstraction |## 🏯 Architecture
 
 ```
 files/resilix/
