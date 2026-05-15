@@ -1,46 +1,51 @@
 {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Resilix Demo Schema",
   "type": "object",
-  "required": [
-    "companyName",
-    "dependencyScore",
-    "confidence",
-    "inferenceType",
-    "sources"
-  ],
+  "required": ["companyName", "timestamp", "signals", "dependencyScore"],
+  "additionalProperties": true,
   "properties": {
-    "companyName": {
-      "type": "string"
-    },
-    "dependencyScore": {
-      "type": "number",
-      "minimum": 0,
-      "maximum": 100
-    },
-    "confidence": {
-      "type": "string",
-      "enum": [
-        "low",
-        "medium",
-        "high"
-      ]
-    },
-    "inferenceType": {
-      "type": "string",
-      "enum": [
-        "observed",
-        "derived",
-        "hypothesis"
-      ]
-    },
-    "sources": {
+    "companyName": {"type": "string"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "signals": {
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "object",
+        "required": ["id", "type", "source"],
+        "properties": {
+          "id": {"type": "string"},
+          "type": {"type": "string"},
+          "source": {"type": "string"},
+          "weight": {"type": "number", "minimum": 0, "maximum": 1},
+          "source_confidence": {"enum": ["low", "medium", "high"]},
+          "summary": {"type": "string"}
+        }
       }
     },
+    "dependencyScore": {"type": "number", "minimum": 0, "maximum": 100},
     "vMEME_distribution": {
+      "type": "object",
+      "additionalProperties": {"type": "number"}
+    },
+    "roadmap": {"type": "array"},
+    "evidence": {"type": "object"},
+    "roadmapActions": {
       "type": "array",
-      "optional": true
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["title", "timeline", "rationale", "impact", "owner"],
+        "properties": {
+          "title": {"type": "string"},
+          "timeline": {"enum": ["0–30", "31–60", "61–90"]},
+          "rationale": {"type": "string", "minLength": 1},
+          "impact": {"enum": ["high", "medium", "low"]},
+          "owner": {"enum": ["COO", "HR", "Strategy"]},
+          "triggered_by": {"type": "array", "items": {"type": "string"}},
+          "derived_from": {"type": "array", "items": {"type": "string"}}
+        }
+      }
     }
   }
 }
