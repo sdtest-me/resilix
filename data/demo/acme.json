@@ -1,0 +1,40 @@
+{
+  "signals": [
+    {
+      "id": "sig_0",
+      "type": "leadership_turnover",
+      "source": "news",
+      "weight": 0.8,
+      "source_confidence": "high"
+    },
+    {
+      "id": "sig_1",
+      "type": "esg_narrative",
+      "source": "esg_report",
+      "weight": 0.4,
+      "source_confidence": "medium"
+    }
+  ],
+  "derived_patterns": [
+    {
+      "id": "pat_0",
+      "type": "operational_signal",
+      "derived_from_signals": [
+        "sig_0"
+      ],
+      "inference_confidence": "high",
+      "reasoning": "High-weight signal"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp_0",
+      "type": "dependency_risk",
+      "derived_from_patterns": [
+        "pat_0"
+      ],
+      "confidence": "high",
+      "reasoning": "Pattern-based inference"
+    }
+  ]
+}
