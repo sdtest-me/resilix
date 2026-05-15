@@ -45,6 +45,54 @@
     },
     "evidence_primitives": {
       "$ref": "./evidence_primitives.json"
+    },
+    "narrative_output": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "section",
+          "pain_point",
+          "gain_statement",
+          "evidence_basis",
+          "confidence",
+          "triggered_by"
+        ],
+        "properties": {
+          "section": {
+            "type": "string",
+            "enum": [
+              "executive_summary"
+            ]
+          },
+          "pain_point": {
+            "type": "string"
+          },
+          "gain_statement": {
+            "type": "string"
+          },
+          "evidence_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "triggered_by": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          }
+        },
+        "additionalProperties": false
+      }
     }
   },
   "additionalProperties": true
