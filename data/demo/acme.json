@@ -1,4 +1,6 @@
 {
+  "companyName": "Acme Manufacturing",
+  "timestamp": "2026-05-15T00:00:00Z",
   "signals": [
     {
       "id": "sig_0",
@@ -15,26 +17,15 @@
       "source_confidence": "medium"
     }
   ],
-  "derived_patterns": [
-    {
-      "id": "pat_0",
-      "type": "operational_signal",
-      "derived_from_signals": [
-        "sig_0"
-      ],
-      "inference_confidence": "high",
-      "reasoning": "High-weight signal"
-    }
+  "dependencyScore": 72,
+  "vMEME_distribution": [
+    {"stage": "Blue", "score": 0.45},
+    {"stage": "Orange", "score": 0.35}
   ],
-  "hypotheses": [
-    {
-      "id": "hyp_0",
-      "type": "dependency_risk",
-      "derived_from_patterns": [
-        "pat_0"
-      ],
-      "confidence": "high",
-      "reasoning": "Pattern-based inference"
-    }
+  "roadmap": [
+    {"horizon": "30d", "action": "Map critical role dependencies"}
+  ],
+  "evidence": [
+    {"source": "esg_report", "note": "Board stability section"}
   ]
 }

@@ -1,46 +1,48 @@
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Resilix Demo Data",
   "type": "object",
   "required": [
     "companyName",
-    "dependencyScore",
-    "confidence",
-    "inferenceType",
-    "sources"
+    "timestamp",
+    "signals",
+    "dependencyScore"
   ],
   "properties": {
     "companyName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
       "type": "string"
     },
-    "dependencyScore": {
-      "type": "number",
-      "minimum": 0,
-      "maximum": 100
-    },
-    "confidence": {
-      "type": "string",
-      "enum": [
-        "low",
-        "medium",
-        "high"
-      ]
-    },
-    "inferenceType": {
-      "type": "string",
-      "enum": [
-        "observed",
-        "derived",
-        "hypothesis"
-      ]
-    },
-    "sources": {
+    "signals": {
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "object"
       }
+    },
+    "dependencyScore": {
+      "type": "number"
     },
     "vMEME_distribution": {
       "type": "array",
-      "optional": true
+      "items": {
+        "type": "object"
+      }
+    },
+    "roadmap": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
     }
-  }
+  },
+  "additionalProperties": true
 }
