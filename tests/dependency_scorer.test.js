@@ -1,0 +1,1 @@
+const assert=require("assert");const{calcDependencyRisk}=require("../src/dependency_scorer");const ev={signals:[{id:"s1",type:"leadership_turnover",weight:0.8},{id:"s2",type:"succession_gap",weight:0.7}]};const r=calcDependencyRisk(ev);assert(r.score>0);assert(r.confidence==="high");console.log("✅ dependency_scorer tests passed")
