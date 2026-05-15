@@ -1,3 +1,4 @@
+import{detectContradictions}from"./contradiction_engine.js";
 export function runPipeline(rawSignals){
   const signals = rawSignals.map((s,i) => ({
     id: `sig_${i}`,
@@ -20,5 +21,5 @@ export function runPipeline(rawSignals){
     confidence: p.inference_confidence,
     reasoning: "Pattern-based inference"
   }));
-  return { signals, derived_patterns, hypotheses };
+  const contradictions=detectContradictions({signals});return{signals,derived_patterns,hypotheses,contradictions};
 }

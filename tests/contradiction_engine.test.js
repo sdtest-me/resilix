@@ -1,0 +1,1 @@
+const assert=require("assert");const{detectContradictions}=require("../src/contradiction_engine");const ev={signals:[{id:"s1",type:"hiring",weight:0.8},{id:"s2",type:"esg",weight:0.7}]};const r=detectContradictions(ev);assert(r.length===1);assert(r[0].between.includes("hiring"));console.log("✅ contradiction tests passed")
