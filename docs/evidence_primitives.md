@@ -1,4 +1,5 @@
 # Evidence primitives usage guide
+
 1. Create each signal with `id`, `type`, `source`, `weight`, `source_confidence`, and ISO-8601 `timestamp`.
 2. Use `generateSignalId(signal)` to produce deterministic signal IDs.
 3. Keep `type` and `source` aligned with known lists in `data/signal_types.json` and `data/source_types.json` when possible.
