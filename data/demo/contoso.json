@@ -1,0 +1,41 @@
+{
+  "signals": [
+    {
+      "id": "sig_0",
+      "type": "supplier_instability",
+      "source": "industry_report",
+      "weight": 0.7,
+      "source_confidence": "high"
+    },
+    {
+      "id": "sig_1",
+      "type": "hiring_slowdown",
+      "source": "job_market",
+      "weight": 0.5,
+      "source_confidence": "medium"
+    }
+  ],
+  "derived_patterns": [
+    {
+      "id": "pat_0",
+      "type": "capacity_pressure",
+      "derived_from_signals": [
+        "sig_0",
+        "sig_1"
+      ],
+      "inference_confidence": "medium",
+      "reasoning": "Combined external pressure signals"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp_0",
+      "type": "resilience_gap",
+      "derived_from_patterns": [
+        "pat_0"
+      ],
+      "confidence": "medium",
+      "reasoning": "Sustained pressure with reduced hiring elasticity"
+    }
+  ]
+}
