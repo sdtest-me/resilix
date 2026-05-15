@@ -30,3 +30,4 @@ Sponsor Lab: [sdtest.me/price#tariff-10](https://sdtest.me/price#tariff-10) | [i
 <a id="russian"></a>
 ## Русский
 > Полный перевод будет добавлен после валидации английской версии.
+Signal fetch usage example: `python3 scripts/fetch_esg.py --company "Acme Corp" --demo --output data/demo/acme.json`
