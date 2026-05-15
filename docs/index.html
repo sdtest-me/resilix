@@ -88,4 +88,16 @@ function toggleTheme(){let h=document.documentElement,b=document.getElementById(
 if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');document.getElementById('theme-btn').textContent='☀️ Light'}
 setLang('en');
 </script><span id="confBadge" class="badge">Confidence: <strong>medium</strong></span>
+<script>
+function renderEvidence(data){
+  if(!data||!data.signals)return;
+  const out=document.getElementById('evidenceOutput');
+  if(!out)return;
+  let html='<h4>Signals</h4><ul>'+data.signals.map(s=>`<li><strong>${s.type}</strong> [${s.source}] w:${s.weight} conf:${s.source_confidence}</li>`).join('')+'</ul>';
+  if(data.derived_patterns?.length){html+='<h4>Patterns</h4><ul>'+data.derived_patterns.map(p=>`<li>${p.type} ← [${p.derived_from_signals.join(', ')}] conf:${p.inference_confidence}</li>`).join('')+'</ul>';}
+  if(data.hypotheses?.length){html+='<h4>Hypotheses</h4><ul>'+data.hypotheses.map(h=>`<li>${h.type} ← [${h.derived_from_patterns.join(', ')}] conf:${h.confidence}</li>`).join('')+'</ul>';}
+  out.innerHTML=html;out.style.display='block';
+}
+</script>
+<div id="evidenceOutput" style="display:none;margin:1rem 0;padding:1rem;border:1px solid #ddd;border-radius:4px"></div>
 </body></html>
