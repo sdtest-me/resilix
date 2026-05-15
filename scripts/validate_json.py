@@ -56,16 +56,19 @@ def main(argv: list[str]) -> int:
         if not target.is_absolute(): target = ROOT / target
         try: payload = load_json(target)
         except FileNotFoundError:
-            print(f"❌ {target.relative_to(ROOT)}: file not found"); failures += 1; continue
+            label = target.relative_to(ROOT) if str(target).startswith(str(ROOT)) else target
+            print(f"❌ {label}: file not found"); failures += 1; continue
         except json.JSONDecodeError as exc:
-            print(f"❌ {target.relative_to(ROOT)}: malformed JSON at line {exc.lineno}, column {exc.colno}: {exc.msg}")
+            label = target.relative_to(ROOT) if str(target).startswith(str(ROOT)) else target
+            print(f"❌ {label}: malformed JSON at line {exc.lineno}, column {exc.colno}: {exc.msg}")
             failures += 1; continue
         errors = validate_payload(payload, schema)
+        label = target.relative_to(ROOT) if str(target).startswith(str(ROOT)) else target
         if errors:
-            print(f"❌ {target.relative_to(ROOT)} failed validation:")
+            print(f"❌ {label} failed validation:")
             for err in errors: print(f"   - {err}")
             failures += 1
-        else: print(f"✅ {target.relative_to(ROOT)} is valid")
+        else: print(f"✅ {label} is valid")
     return 1 if failures else 0
 
 if __name__ == '__main__':
