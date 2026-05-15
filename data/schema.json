@@ -41,6 +41,66 @@
     "vMEME_distribution": {
       "type": "array",
       "optional": true
+    },
+    "roadmapActions": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "timeline",
+          "rationale",
+          "impact",
+          "owner"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "timeline": {
+            "type": "string",
+            "enum": [
+              "0–30",
+              "31–60",
+              "61–90"
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "impact": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "owner": {
+            "type": "string",
+            "enum": [
+              "COO",
+              "HR",
+              "Strategy"
+            ]
+          },
+          "triggered_by": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "derived_from": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
     }
   }
 }
