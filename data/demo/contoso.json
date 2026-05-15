@@ -37,5 +37,8 @@
       "confidence": "medium",
       "reasoning": "Sustained pressure with reduced hiring elasticity"
     }
-  ]
+  ],
+  "companyName": "Contoso Ltd",
+  "timestamp": "2026-05-15T00:00:00Z",
+  "dependencyScore": 45
 }
