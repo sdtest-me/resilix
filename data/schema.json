@@ -42,6 +42,9 @@
       "items": {
         "type": "object"
       }
+    },
+    "evidence_primitives": {
+      "$ref": "./evidence_primitives.json"
     }
   },
   "additionalProperties": true

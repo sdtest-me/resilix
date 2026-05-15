@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Resilix Evidence Primitives",
+  "type": "object",
+  "required": ["signals"],
+  "properties": {
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "source", "weight", "source_confidence", "timestamp"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "type": { "type": "string", "minLength": 1 },
+          "source": { "type": "string", "minLength": 1 },
+          "weight": { "type": "number", "minimum": 0, "maximum": 1 },
+          "source_confidence": { "type": "string", "enum": ["low", "medium", "high"] },
+          "timestamp": { "type": "string", "format": "date-time" },
+          "summary": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "derived_patterns": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/traceableDerived" }
+    },
+    "hypotheses": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/traceableDerived" }
+    }
+  },
+  "$defs": {
+    "traceableDerived": {
+      "type": "object",
+      "required": ["id", "type", "inference_confidence", "final_confidence"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "minLength": 1 },
+        "inference_confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "final_confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "derived_from_signals": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+        "derived_from_patterns": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 }
+      },
+      "anyOf": [
+        { "required": ["derived_from_signals"] },
+        { "required": ["derived_from_patterns"] }
+      ],
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
