@@ -106,8 +106,11 @@ async function loadDemo(){
     const res=await fetch('data/demo/acme.json');
     const data=await res.json();
     if(window.renderEvidence)renderEvidence(data);
+if(window.renderVMEME)renderVMEME(data);
   }catch(e){console.warn('Demo load skipped:',e);}
 }
 document.addEventListener('DOMContentLoaded',loadDemo);
 </script>
+<script>function renderVMEME(d){const o=document.getElementById("vMEMEOutput");if(!o||!d.vMEME)return;let h="<h4>Spiral Dynamics Map (Interpretive Layer)</h4><ul>";for(const[k,v]of Object.entries(d.vMEME))h+=`<li><strong>${k}</strong>: ${(v*100).toFixed(1)}%</li>`;h+="</ul><small>⚠️ Optional ontology overlay. Not deterministic.</small>";o.innerHTML=h;o.style.display="block"}</script>
+<div id="vMEMEOutput" style="display:none;margin:1rem 0;padding:1rem;border:1px dashed #ccc;border-radius:4px"></div>
 </body></html>

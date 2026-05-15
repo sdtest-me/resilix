@@ -1,0 +1,1 @@
+import{mapToVMEME}from"../src/spiral_mapper.js";const r=mapToVMEME({signals:[{type:"control",weight:0.8},{type:"kpi",weight:0.7}]});if(r.red<=0||r.orange<=0)throw new Error("Failed");console.log("✅ spiral_mapper tests passed")

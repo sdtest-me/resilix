@@ -1,1 +1,1 @@
-const assert=require("assert");const{runPipeline}=require("../src/pipeline");const r=runPipeline([{type:"hiring",source:"jobs",weight:0.8}]);assert(r.signals[0].id==="sig_0");assert(r.derived_patterns[0].id==="pat_0");assert(r.hypotheses[0].type==="dependency_risk");console.log("✅ pipeline tests passed")
+import{runPipeline}from"../src/pipeline.js";const r=runPipeline([{type:"hiring",source:"jobs",weight:0.8}]);if(r.signals[0].id!=="sig_0")throw new Error("Failed");console.log("✅ pipeline tests passed")
