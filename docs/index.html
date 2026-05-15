@@ -100,4 +100,14 @@ function renderEvidence(data){
 }
 </script>
 <div id="evidenceOutput" style="display:none;margin:1rem 0;padding:1rem;border:1px solid #ddd;border-radius:4px"></div>
+<script>
+async function loadDemo(){
+  try{
+    const res=await fetch('data/demo/acme.json');
+    const data=await res.json();
+    if(window.renderEvidence)renderEvidence(data);
+  }catch(e){console.warn('Demo load skipped:',e);}
+}
+document.addEventListener('DOMContentLoaded',loadDemo);
+</script>
 </body></html>
