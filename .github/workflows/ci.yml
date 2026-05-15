@@ -14,3 +14,6 @@ jobs:
           grep -q 'ₒ' README.md && { echo "❌ Found 'ₒ' instead of '→'"; exit 1; } || true
           grep -q '\-\-\.' README.md && { echo "❌ Found '--.' instead of '---'"; exit 1; } || true
           echo "✅ README checks passed"
+
+      - name: Validate demo JSON schema
+        run: python3 scripts/validate_json.py
