@@ -131,6 +131,7 @@ async function loadDemo(){
     const data=await fetchDemoData(requestedDemo);
     if(window.renderEvidence)renderEvidence(data);
     if(window.renderVMEME)renderVMEME(data);
+    if(Array.isArray(data.narrative_output)&&window.renderNarrative)renderNarrative(data.narrative_output);
     setDemoStatus('loaded',requestedDemo);
   }catch(e){
     console.warn('Demo load failed, fallback to default:',e);
@@ -138,6 +139,7 @@ async function loadDemo(){
       const fallbackData=await fetchDemoData(DEFAULT_DEMO);
       if(window.renderEvidence)renderEvidence(fallbackData);
       if(window.renderVMEME)renderVMEME(fallbackData);
+      if(Array.isArray(fallbackData.narrative_output)&&window.renderNarrative)renderNarrative(fallbackData.narrative_output);
       setDemoStatus('fallback',requestedDemo);
     }catch(fallbackError){
       console.warn('Default demo load failed:',fallbackError);
@@ -147,6 +149,16 @@ async function loadDemo(){
 }
 document.addEventListener('DOMContentLoaded',loadDemo);
 </script>
+
+<script>
+function renderNarrative(items){
+  const out=document.getElementById('narrativeOutput');
+  if(!out||!Array.isArray(items)||!items.length)return;
+  out.innerHTML='<h4>Narrative Objects</h4><pre>'+JSON.stringify(items,null,2)+'</pre>';
+  out.style.display='block';
+}
+</script>
+<div id="narrativeOutput" style="display:none;margin:1rem 0;padding:1rem;border:1px solid #ddd;border-radius:4px;white-space:pre-wrap"></div>
 <script>function renderVMEME(d){const o=document.getElementById("vMEMEOutput");if(!o||!d.vMEME)return;let h="<h4>Spiral Dynamics Map (Interpretive Layer)</h4><ul>";for(const[k,v]of Object.entries(d.vMEME))h+=`<li><strong>${k}</strong>: ${(v*100).toFixed(1)}%</li>`;h+="</ul><small>⚠️ Optional ontology overlay. Not deterministic.</small>";o.innerHTML=h;o.style.display="block"}</script>
 <div id="vMEMEOutput" style="display:none;margin:1rem 0;padding:1rem;border:1px dashed #ccc;border-radius:4px"></div>
 </body></html>
