@@ -5,6 +5,8 @@ from pathlib import Path
 from typing import Any, Dict, List, Tuple
 from uuid import NAMESPACE_URL, uuid5
 
+from src.sponsor_onboarding import validate_onboarding_for_ingestion
+
 SCHEMA_PATH = Path(__file__).resolve().parent.parent / "data" / "calibration_schema.json"
 TRACE_NAMESPACE = uuid5(NAMESPACE_URL, "resilix.calibrate.trace")
 QUEUE: Dict[str, List[Dict[str, Any]]] = {}
@@ -45,6 +47,8 @@ def _validate_payload(payload: Dict[str, Any], schema: Dict[str, Any]) -> Tuple[
 
 
 def process_calibration(payload: Dict[str, Any], downstream_available: bool = False) -> Tuple[int, Dict[str, Any]]:
+    if not validate_onboarding_for_ingestion(payload):
+        return 400, {"error": "onboarding_precheck_failed"}
     schema = _load_schema()
     valid, error = _validate_payload(payload, schema)
     if not valid:
