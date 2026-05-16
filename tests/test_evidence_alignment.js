@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import {computeAlignment,validateAlignmentOutput} from '../src/evidence_alignment.js';
+const demo=JSON.parse(fs.readFileSync(new URL('../data/demo/acme.json',import.meta.url),'utf8'));
+const out1=computeAlignment(demo,{}),out2=computeAlignment(demo,{});
+if(JSON.stringify(out1)!==JSON.stringify(out2))throw new Error('non-deterministic output');
+if(!validateAlignmentOutput(out1))throw new Error('invalid output contract');
+if(!out1.alignment_details.every(x=>x.derived_from?.length&&x.triggered_by?.length))throw new Error('missing detail trace fields');
+if(!out1.resolution_suggestions.every(x=>x.derived_from?.length&&x.triggered_by?.length))throw new Error('missing suggestion trace fields');
+const t=Date.now(); for(let i=0;i<500;i++)computeAlignment(demo,{}); const ms=(Date.now()-t)/500;
+if(ms>=150)throw new Error(`runtime too slow: ${ms}ms`);
+console.log('✅ All evidence_alignment tests passed');

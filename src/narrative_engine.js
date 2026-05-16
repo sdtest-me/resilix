@@ -55,7 +55,10 @@ function validateNarrative(obj) {
 }
 
 function generateNarrative(evidence) {
-  return buildRuleSet().filter((r) => r.when(evidence || {})).map((r) => r.run(evidence || {})).filter(validateNarrative);
+  const input = evidence || {};
+  const alignment = input.alignment_annotations || input.alignment || null;
+  const enriched = alignment ? { ...input, contradictions: input.contradictions || (alignment.alignment_details || []).filter((d) => d.contradicts && d.contradicts.length) } : input;
+  return buildRuleSet().filter((r) => r.when(enriched)).map((r) => r.run(enriched)).filter(validateNarrative);
 }
 
 export { generateNarrative, buildRuleSet, validateNarrative, PAIN_GAIN, SECTIONS };
