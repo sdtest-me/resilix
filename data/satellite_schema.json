@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Resilix Satellite Structural Schema",
+  "type": "object",
+  "required": [
+    "satellite",
+    "epistemic_status",
+    "triggered_by",
+    "derived_from",
+    "interpretive_overlay",
+    "provenance_depth"
+  ],
+  "properties": {
+    "satellite": {
+      "type": "object",
+      "required": ["satellite_id", "display_name", "enabled_modules", "allowed_signal_types"],
+      "properties": {
+        "satellite_id": { "type": "string", "minLength": 1 },
+        "display_name": { "type": "string", "minLength": 1 },
+        "enabled_modules": { "type": "array", "items": { "type": "string" } },
+        "allowed_signal_types": { "type": "array", "items": { "type": "string" } },
+        "labels": { "type": "object", "additionalProperties": true },
+        "rendering_hints": { "type": "object", "additionalProperties": true }
+      },
+      "additionalProperties": true
+    },
+    "vmeme": { "type": ["string", "null"] },
+    "epistemic_status": { "type": "string" },
+    "interpretive_overlay": { "const": true },
+    "triggered_by": { "type": "array", "items": { "type": "string" } },
+    "derived_from": { "type": "array", "items": { "type": "string" } },
+    "provenance_depth": { "type": "integer", "minimum": 0, "maximum": 2 },
+    "evidence": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+    "unknown_signals": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+    "narrative_summary": { "type": ["string", "null"] }
+  },
+  "additionalProperties": true
+}

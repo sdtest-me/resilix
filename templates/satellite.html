@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Resilix Satellite Template</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #222; }
+    pre { background: #f4f4f4; padding: 12px; border-radius: 6px; overflow-x: auto; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+    .label { font-weight: 700; display: inline-block; min-width: 180px; }
+  </style>
+</head>
+<body>
+  <h1>Satellite Structural Output</h1>
+  <p>Deterministic structural rendering template for Resilix satellite verticals.</p>
+  <div id="root"></div>
+
+  <script>
+    'use strict';
+    const PROVENANCE_DEPTH_LIMIT = 2;
+    function normalizeArray(value) { return Array.isArray(value) ? value : []; }
+    function renderSatellite(payload) {
+      const root = document.getElementById('root');
+      const satellite = payload && payload.satellite ? payload.satellite : {};
+      const evidence = normalizeArray(payload && payload.evidence);
+      const triggeredBy = normalizeArray(payload && payload.triggered_by);
+      const derivedFrom = normalizeArray(payload && payload.derived_from);
+      const depth = Number(payload && payload.provenance_depth || 0);
+      if (depth > PROVENANCE_DEPTH_LIMIT) {
+        throw new Error('provenance_depth_limit exceeded: max = ' + PROVENANCE_DEPTH_LIMIT);
+      }
+      const output = {
+        satellite_id: satellite.satellite_id || null,
+        display_name: satellite.display_name || null,
+        enabled_modules: normalizeArray(satellite.enabled_modules),
+        allowed_signal_types: normalizeArray(satellite.allowed_signal_types),
+        vmeme: payload && payload.vmeme || null,
+        epistemic_status: payload && payload.epistemic_status || 'unknown',
+        interpretive_overlay: true,
+        triggered_by: triggeredBy,
+        derived_from: derivedFrom,
+        evidence,
+        unknown_signals_passthrough: normalizeArray(payload && payload.unknown_signals),
+        narrative_summary: payload && payload.narrative_summary || null
+      };
+      root.innerHTML = [
+        '<div class="card"><span class="label">satellite_id</span>' + String(output.satellite_id) + '</div>',
+        '<div class="card"><span class="label">display_name</span>' + String(output.display_name) + '</div>',
+        '<div class="card"><span class="label">epistemic_status</span>' + String(output.epistemic_status) + '</div>',
+        '<div class="card"><span class="label">interpretive_overlay</span>' + String(output.interpretive_overlay) + '</div>',
+        '<pre>' + JSON.stringify(output, null, 2) + '</pre>'
+      ].join('');
+      return output;
+    }
+    window.ResilixSatelliteTemplate = { renderSatellite, PROVENANCE_DEPTH_LIMIT };
+  </script>
+</body>
+</html>
