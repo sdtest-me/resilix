@@ -37,6 +37,10 @@ The following principles govern all calibration workflows:
 - **Structure over semantics:** prefer schema-constrained representations over narrative interpretation.
 - **Hypotheses over conclusions:** outputs remain testable hypotheses unless formally validated.
 
+## Calibrate API Ingestion Boundary
+The `POST /api/calibrate` hook is the Sponsor Lab ingestion boundary for normalized internal evidence.
+It enforces aggregate-only validation, namespace isolation, deterministic trace IDs, and provenance tagging before downstream processing.
+
 ## Calibration Inputs
 Calibration may use approved internal signals such as:
 
