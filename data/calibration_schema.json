@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sponsor Lab Calibration Object",
+  "type": "object",
+  "required": [
+    "calibration_session_id",
+    "client_namespace",
+    "timestamp",
+    "evidence_inventory",
+    "provenance_chain",
+    "reviewer_context"
+  ],
+  "properties": {
+    "calibration_session_id": { "type": "string", "minLength": 1 },
+    "client_namespace": { "type": "string", "minLength": 1 },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "evidence_inventory": {
+      "type": "object",
+      "properties": {
+        "internal_evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "external_evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      },
+      "required": ["internal_evidence_refs", "external_evidence_refs"],
+      "additionalProperties": true
+    },
+    "provenance_chain": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "reviewer_context": {
+      "type": "object",
+      "properties": {
+        "reviewer_role": { "type": "string", "minLength": 1 },
+        "trigger": { "type": "string", "minLength": 1 }
+      },
+      "required": ["reviewer_role", "trigger"],
+      "additionalProperties": true
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["internal_ref", "external_ref", "aggregation_count", "derived_from", "triggered_by"],
+        "properties": {
+          "internal_ref": { "type": "string", "minLength": 1 },
+          "external_ref": { "type": "string", "minLength": 1 },
+          "aggregation_count": { "type": "integer", "minimum": 5 },
+          "derived_from": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "triggered_by": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+        },
+        "additionalProperties": true
+      }
+    },
+    "calibration_assessment": {
+      "type": "object",
+      "properties": {
+        "evidence_alignment": { "type": "string", "enum": ["aligned", "mixed", "contradictory"] },
+        "contradiction_resolution": { "type": "string" },
+        "evidence_coverage": { "type": "string", "enum": ["low", "medium", "high"] },
+        "ambiguity_reduction": { "type": "string", "enum": ["none", "partial", "substantial"] }
+      },
+      "additionalProperties": true
+    },
+    "failure_states": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "low_evidence_coverage",
+          "conflicting_evidence",
+          "sparse_calibration",
+          "stale_evidence",
+          "namespace_contamination_risk"
+        ]
+      }
+    }
+  },
+  "additionalProperties": true
+}
