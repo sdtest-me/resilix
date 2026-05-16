@@ -209,3 +209,6 @@ Known limitations that must remain explicit:
 - domain judgment remains necessary for high-impact decisions.
 
 Future enhancements must preserve these boundaries and must not introduce overclaiming, synthetic precision, or pseudo-scientific framing.
+
+## Evidence Alignment Resolution Layer
+The `src/evidence_alignment.js` module operates as a deterministic resolution layer before narrative derivation. It adds alignment annotations (coverage, coherence, contradiction burden, and deterministic resolution suggestions) without modifying source evidence or making accuracy claims. Downstream components should consume these annotations as traceable control signals for contradiction handling and coverage visibility.
