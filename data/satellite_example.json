@@ -1,0 +1,31 @@
+{
+  "satellite": {
+    "satellite_id": "hr_satellite",
+    "display_name": "HR Satellite",
+    "enabled_modules": ["roadmap", "evidence_alignment"],
+    "allowed_signal_types": ["esg_report", "incident_log"],
+    "labels": {
+      "evidence": "Evidence"
+    }
+  },
+  "vmeme": null,
+  "epistemic_status": "provisional",
+  "interpretive_overlay": true,
+  "triggered_by": ["signal:incident_log:2026-05-16"],
+  "derived_from": ["output/aitas-demo-v1.json#signals[0]"],
+  "provenance_depth": 1,
+  "evidence": [
+    {
+      "id": "ev_001",
+      "source_type": "report",
+      "note": "Aggregate-only evidence entry"
+    }
+  ],
+  "unknown_signals": [
+    {
+      "signal_type": "custom_satellite_signal",
+      "payload": { "status": "passthrough" }
+    }
+  ],
+  "narrative_summary": "Summarizes listed evidence only."
+}
