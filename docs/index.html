@@ -114,7 +114,6 @@ function setDemoStatus(kind,demoName){
   if(!box)return;
   const en = kind==='fallback' ? (demoName !== DEFAULT_DEMO ? `Demo "${demoName}" not found. ` : '') + `Loaded dataset "${DEFAULT_DEMO}".` : `Loaded demo dataset: "${demoName}".`;
   const ru = kind==='fallback' ? `Демо "${demoName}" не найдено. Загружен набор по умолчанию "${DEFAULT_DEMO}".` : `Загружено демо: "${demoName}".`;
-    :`Загружен демо-набор: "${demoName}".`;
   box.dataset.en=en;box.dataset.ru=ru;
   box.textContent=document.documentElement.lang==='ru'?ru:en;
   box.style.display='block';
