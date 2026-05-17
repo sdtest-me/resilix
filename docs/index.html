@@ -120,7 +120,7 @@ function setDemoStatus(kind,demoName){
   box.style.display='block';
 }
 async function fetchDemoData(demoName){
-  const res=await fetch(`data/demo/${demoName}.json`,{cache:'no-cache'});
+  const res=await fetch(`${BASE_PATH}/data/demo/${demoName}.json`,{cache:'no-cache'});
   if(!res.ok)throw new Error(`Missing demo: ${demoName}`);
   return res.json();
 }
